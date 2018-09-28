@@ -2,6 +2,8 @@
 
 Add the nav wrapper, as many sections as you like and Dot Nav will do the rest.
 
+See the [demo](https://codepen.io/Rueb/pen/WabbEo).
+
 #### HTML
 
 ```html
