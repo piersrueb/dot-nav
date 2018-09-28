@@ -409,12 +409,12 @@ nav#dot-nav {
   nav#dot-nav a {
     border: 1px solid #121212;
     border-radius: 50%;
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     display: block;
     margin: 10px;
-    -webkit-transition: all 0.2;
-    transition: all 0.2; }
+    -webkit-transition: all 0.4;
+    transition: all 0.4; }
     nav#dot-nav a.active, nav#dot-nav a:first-child {
       background: #121212; }
 
