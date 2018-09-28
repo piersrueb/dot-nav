@@ -1,0 +1,38 @@
+//  import
+
+@import 'variables';
+@import 'reset';
+
+//  custom
+
+body{
+    background: #f2f2f2;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+    &:nth-child(even){
+        background: #db2853;
+    }
+}
+
+nav{
+    &#dot-nav{
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        a{
+            border: 1px solid #121212;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            display: block;
+            margin: 10px;
+            transition: all 0.2;
+            &.active, &:first-child{
+                background: #121212;
+            }
+        }
+    }
+}

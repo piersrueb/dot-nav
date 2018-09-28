@@ -1,0 +1,38 @@
+//  colours
+
+$white: #ffffff;
+$black: #000000;
+$green: #0f9748;
+$grey: #696969;
+
+//  typography
+
+$body-font: 'CNNSansRegular', Helvetica, Arial, sans-serif;
+$light-font: 'CNNSansLight', Helvetica, Arial, sans-serif;
+$italic-font: 'CNNSansBoldItalic', Helvetica, Arial, sans-serif;
+$header-font: 'CNNSansBold', Helvetica, Arial, sans-serif;
+
+@mixin fontstyle($family, $size, $weight, $height, $spacing, $color, $align){
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $size * $height;
+    letter-spacing: $spacing;
+    color: $color;
+    text-align: $align;
+}
+
+@mixin copyPadding($top, $bottom){
+    padding: $top 25px $bottom 25px;
+    margin: 0;
+}
+
+//  breakpoints
+
+$phone: 320px;
+$tablet: 480px;
+$desktop: 769px;
+$medium-desktop: 960px;
+$ipad-width: 1025px;
+$large-desktop: 1280px;
+$extra-large-desktop: 1450px;
