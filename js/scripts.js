@@ -58,7 +58,7 @@ var allSecs = document.getElementsByTagName('section'),
     allDots,
     allVis = document.getElementsByClassName('in-viewport'),
     nav = document.getElementById('dot-nav'),
-    scrollSpeed = '600';
+    scrollSpeed = '1000';
 
 for (var i = 0; i < allSecs.length; i++) {
     allSecs[i].id = 'section-' + i;

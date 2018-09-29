@@ -31,8 +31,6 @@ nav#dot-nav a {
     height: 8px;
     display: block;
     margin: 10px;
-    -webkit-transition: all 0.4;
-    transition: all 0.4;
 }
 
 nav#dot-nav a.active, nav#dot-nav a:first-child {
