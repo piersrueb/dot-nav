@@ -15,7 +15,7 @@ See the [demo](https://codepen.io/Rueb/pen/WabbEo).
 
 #### CSS
 
-Style the nave to suit your needs.
+Style the ```nav``` to suit your needs.
 
 ```css
 nav#dot-nav {
