@@ -5,6 +5,7 @@
 !.gitignore
 !dot-nav.js
 !readme.md
+!demo/
 
 !*/demo/css/style.css
 !*/demo/js/scripts.js
