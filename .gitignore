@@ -5,7 +5,7 @@
 !.gitignore
 !dot-nav.js
 !readme.md
-!*/css/style.css
+!*/demo/css/style.css
 
 # OS generated files #
 ######################
