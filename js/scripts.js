@@ -34,12 +34,12 @@ function scrollIt(destination, duration = 200, easing = 'linear', callback) {
 //  in viewport js
 
 function inViewport(elem){
-    var allElements = document.getElementsByTagName(elem),
+    const allElements = document.getElementsByTagName(elem),
         windowHeight = window.innerHeight;
     window.addEventListener('scroll', elems);
     function elems(){
-        for (var i = 0; i < allElements.length; i++) {
-            var viewportOffset = allElements[i].getBoundingClientRect(),
+        for (let i = 0; i < allElements.length; i++) {
+            let viewportOffset = allElements[i].getBoundingClientRect(),
                 top = viewportOffset.top;
             if(top < windowHeight){
                 allElements[i].classList.add('in-viewport');
@@ -54,21 +54,21 @@ inViewport('section');
 
 //  dot nav
 
-var allSecs = document.getElementsByTagName('section'),
-    allDots,
-    allVis = document.getElementsByClassName('in-viewport'),
-    nav = document.getElementById('dot-nav'),
-    scrollSpeed = '1000';
+const allSecs = document.getElementsByTagName('section');
+const nav = document.getElementById('dot-nav');
+const scrollSpeed = '1000';
+let allVis = document.getElementsByClassName('in-viewport'),
+    allDots;
 
-for (var i = 0; i < allSecs.length; i++) {
+for (let i = 0; i < allSecs.length; i++) {
     allSecs[i].id = 'section-' + i;
 }
 
 //  add the dots
 
-function buildNav(){
-    for (var i = 0; i < allSecs.length; i++) {
-        var dotCreate = document.createElement('a');
+const buildNav = () => {
+    for (let i = 0; i < allSecs.length; i++) {
+        const dotCreate = document.createElement('a');
         dotCreate.id = 'dot-' + i;
         dotCreate.classList.add('dots');
         dotCreate.href = '#';
@@ -80,7 +80,7 @@ buildNav();
 
 //  nav position
 
-var navHeight = document.getElementById('dot-nav').clientHeight,
+let navHeight = document.getElementById('dot-nav').clientHeight,
     hNavHeight = navHeight / 2;
 document.getElementById('dot-nav').style.top = 'calc(50% - ' + hNavHeight + 'px)';
 
@@ -90,22 +90,23 @@ window.onscroll = function(){
     allVis = document.getElementsByClassName('in-viewport');
     allDots = document.getElementsByClassName('dots');
     visNum = allVis.length;
-    for (var i = 0; i < allSecs.length; i++) {
+    for (let i = 0; i < allSecs.length; i++) {
         allDots[i].classList.remove('active');
     }
-    for (var i = 0; i < allVis.length; i++) {
+    for (let i = 0; i < allVis.length; i++) {
         allDots[i].classList.add('active');
     }
 };
 
 //  click stuff
 
-allDots = document.getElementsByClassName('dots');
-for (var i = 0; i < allDots.length; i++) {
-    allDots[i].addEventListener('click', scrollMe);
-}
-function scrollMe(e){
-    var anchor = e.currentTarget.dataset.sec;
+const scrollMe = (e) => {
+    let anchor = e.currentTarget.dataset.sec;
     scrollIt(document.querySelector('#section-' + anchor), scrollSpeed, 'easeInOutQuart');
     e.preventDefault();
+}
+
+allDots = document.getElementsByClassName('dots');
+for (let i = 0; i < allDots.length; i++) {
+    allDots[i].addEventListener('click', scrollMe);
 }
