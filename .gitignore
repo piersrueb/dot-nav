@@ -6,9 +6,8 @@
 !dot-nav.js
 !readme.md
 !demo/
-# etc...
 
 # if the files to be tracked are in subdirectories
-!*/demo/index.html
-!*/demo/js/scripts.js
-!*/demo/css/style.css
+!demo/demo.html
+!demo/js/scripts.js
+!demo/css/style.css
