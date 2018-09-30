@@ -34,6 +34,13 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('css'))
 });
 
+//  copy js
+
+gulp.task('copyjs', function() {
+    gulp.src('js/*.{,js}')
+        .pipe(gulp.dest(''));
+});
+
 //  webserver - launch localhost
 
 gulp.task('webserver', function() {
@@ -48,7 +55,8 @@ gulp.task('webserver', function() {
 
 //  run tasks + watch
 
-gulp.task('default', ['styles', 'webserver', 'watch']);
+gulp.task('default', ['styles', 'copyjs', 'webserver', 'watch']);
 gulp.task('watch', function() {
     gulp.watch('css/sass/*.scss',['styles']);
+    gulp.watch('js/*.js', ['copyjs']);
 })
