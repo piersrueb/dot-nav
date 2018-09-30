@@ -5,6 +5,7 @@
 !.gitignore
 !dot-nav.js
 !readme.md
+!demo/
 # etc...
 
 # if the files to be tracked are in subdirectories
