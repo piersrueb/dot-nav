@@ -6,8 +6,8 @@
 !dot-nav.js
 !readme.md
 !demo/
-!demo/css/
-!demo/js/
+!demo/css/style.css
+!demo/js/scripts.js
 
 # OS generated files #
 ######################
