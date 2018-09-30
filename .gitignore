@@ -9,6 +9,9 @@
 !demo/css/style.css
 !demo/js/scripts.js
 
+!*/demo/css/style.css
+!*/demo/js/scripts.js
+
 # OS generated files #
 ######################
 .DS_Store
