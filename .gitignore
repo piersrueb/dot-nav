@@ -14,5 +14,6 @@ Thumbs.db
 # But not these files...
 !.gitignore
 !dot-nav.js
+!dot-nav-min.js
 !readme.md
 !demo/
