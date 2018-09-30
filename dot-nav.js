@@ -61,7 +61,7 @@ let allVis = document.getElementsByClassName('in-viewport'),
     allDots;
 
 for (let i = 0; i < allSecs.length; i++) {
-    allSecs[i].id = 'section-' + i;
+    allSecs[i].classList.add('section-' + i);
 }
 
 //  add the dots
@@ -102,7 +102,7 @@ window.onscroll = function(){
 
 const scrollMe = (e) => {
     let anchor = e.currentTarget.dataset.sec;
-    scrollIt(document.querySelector('#section-' + anchor), scrollSpeed, 'easeInOutQuart');
+    scrollIt(document.querySelector('.section-' + anchor), scrollSpeed, 'easeInOutQuart');
     e.preventDefault();
 }
 
