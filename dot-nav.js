@@ -1,7 +1,6 @@
 //  dot nav
 
 const dotNav = () => {
-
     function scrollIt(destination, duration = 200, easing = 'linear', callback) {
         const easings = { easeInOutQuart(t) { return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t; } };
         const start = window.pageYOffset;
@@ -33,7 +32,7 @@ const dotNav = () => {
         scroll();
     }
 
-    //  in viewport js
+    //  in viewport
 
     function inViewport(elem){
         const allElements = document.getElementsByTagName(elem),
@@ -61,7 +60,6 @@ const dotNav = () => {
     const scrollSpeed = '1000';
     let allVis = document.getElementsByClassName('in-viewport'),
         allDots;
-
     for (let i = 0; i < allSecs.length; i++) {
         allSecs[i].classList.add('section-' + i);
     }
@@ -115,5 +113,4 @@ const dotNav = () => {
     }
 
 }
-
 dotNav();
