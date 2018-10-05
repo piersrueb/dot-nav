@@ -1,8 +1,22 @@
 //  dot nav
 
-const dotNav = () => {
+const dotNav = (elem, easing) => {
     function scrollIt(destination, duration = 200, easing = 'linear', callback) {
-        const easings = { easeInOutQuart(t) { return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t; } };
+        const easings = {
+            linear(t) { return t; },
+            easeInQuad(t) { return t * t; },
+            easeOutQuad(t) { return t * (2 - t); },
+            easeInOutQuad(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; },
+            easeInCubic(t) { return t * t * t; },
+            easeOutCubic(t) { return (--t) * t * t + 1; },
+            easeInOutCubic(t) { return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1; },
+            easeInQuart(t) { return t * t * t * t; },
+            easeOutQuart(t) { return 1 - (--t) * t * t * t; },
+            easeInOutQuart(t) { return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t; },
+            easeInQuint(t) { return t * t * t * t * t; },
+            easeOutQuint(t) { return 1 + (--t) * t * t * t * t; },
+            easeInOutQuint(t) { return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t; }
+        };
         const start = window.pageYOffset;
         const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
         const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
@@ -34,28 +48,28 @@ const dotNav = () => {
 
     //  in viewport
 
-    function inViewport(elem){
-        const allElements = document.getElementsByTagName(elem),
-            windowHeight = window.innerHeight;
-        window.addEventListener('scroll', elems);
-        function elems(){
-            for (let i = 0; i < allElements.length; i++) {
-                let viewportOffset = allElements[i].getBoundingClientRect(),
-                    top = viewportOffset.top;
-                if(top < windowHeight){
-                    allElements[i].classList.add('in-viewport');
+    const inViewport = (el) => {
+        let allElements = document.getElementsByTagName(el);
+        let windowHeight = window.innerHeight;
+        const elems = () => {
+            for (let i = 0; i < allElements.length; i++) {  //  loop through the sections
+                let viewportOffset = allElements[i].getBoundingClientRect();  //  returns the size of an element and its position relative to the viewport
+                let top = viewportOffset.top;  //  get the offset top
+                if(top < windowHeight){  //  if the top offset is less than the window height
+                    allElements[i].classList.add('in-viewport');  //  add the class
                 } else{
-                    allElements[i].classList.remove('in-viewport');
+                    allElements[i].classList.remove('in-viewport');  //  remove the class
                 }
             }
         }
         elems();
+        window.addEventListener('scroll', elems);
     }
     inViewport('section');
 
     //  dot nav
 
-    const allSecs = document.getElementsByTagName('section');
+    const allSecs = document.getElementsByTagName(elem);
     const nav = document.getElementById('dot-nav');
     const scrollSpeed = '1000';
     let allVis = document.getElementsByClassName('in-viewport'),
@@ -80,8 +94,8 @@ const dotNav = () => {
 
     //  nav position
 
-    let navHeight = document.getElementById('dot-nav').clientHeight,
-        hNavHeight = navHeight / 2;
+    let navHeight = document.getElementById('dot-nav').clientHeight;
+    let hNavHeight = navHeight / 2;
     document.getElementById('dot-nav').style.top = 'calc(50% - ' + hNavHeight + 'px)';
 
     //  onscroll
@@ -103,7 +117,7 @@ const dotNav = () => {
 
     const scrollMe = (e) => {
         let anchor = e.currentTarget.dataset.sec;
-        scrollIt(document.querySelector('.section-' + anchor), scrollSpeed, 'easeInOutQuart');
+        scrollIt(document.querySelector('.section-' + anchor), scrollSpeed, easing);
         e.preventDefault();
     }
 
@@ -113,4 +127,5 @@ const dotNav = () => {
     }
 
 }
-dotNav();
+
+dotNav('section', 'easeInOutCubic');

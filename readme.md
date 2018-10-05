@@ -4,6 +4,32 @@ Add the nav wrapper, as many sections as you like and Dot Nav will do the rest.
 
 See the [demo](https://codepen.io/Rueb/pen/WabbEo).
 
+#### JS
+
+Call the function on all section elements and define your easing method.
+
+```js
+dotNav('section', 'easeInOutCubic');
+```
+
+Here are the easing methods available.
+
+```js
+linear
+easeInQuad
+easeOutQuad
+easeInOutQuad
+easeInCubic
+easeOutCubic
+easeInOutCubic
+easeInQuart
+easeOutQuart
+easeInOutQuart
+easeInQuint
+easeOutQuint
+easeInOutQuint
+```
+
 #### HTML
 
 ```html
