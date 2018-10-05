@@ -127,5 +127,3 @@ const dotNav = (elem, easing) => {
     }
 
 }
-
-dotNav('section', 'easeInOutCubic');
